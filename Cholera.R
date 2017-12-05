@@ -27,8 +27,6 @@ deaths_cholera_world <- function(input) {
 
 #returns a list containing the number of years data covers 
 list_of_years_cholera <- function(input) {
-  year_of_earliest_tracking_deaths <- select(arrange(number_of_deaths,Year)[1,],Year)
-  year_of_latest_tracking_deaths <- select(arrange(number_of_deaths,-Year)[1,],Year)
   year_of_earliest_tracking_cases <- select(arrange(number_of_cases,Year)[1,],Year)
   year_of_latest_tracking_cases <- select(arrange(number_of_cases,-Year)[1,],Year)
   return(year_of_earliest_tracking_cases[1,]:year_of_latest_tracking_cases[1,])
