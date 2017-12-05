@@ -4,8 +4,7 @@ cases_malaria <- read.csv("data/NUMBER_OF_REPORTED_MALARIA_CASES.csv",header = T
 library(ggplot2)
 library(dplyr)
 
-years_death_maralia <- gsub("X","",colnames(death_malaria)[-1])
-years_cases_malaria <- gsub("X.","",colnames(cases_malaria)[-1])
+years_maralia <- gsub("X","",colnames(death_malaria)[-1])
 
 
 for (i in 2:length(colnames(cases_malaria))){cases_malaria[,i] <-  as.numeric(gsub(" ","",cases_malaria[,i]))}
