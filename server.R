@@ -36,7 +36,7 @@ our.server <- function(input, output) {
   output$HIV_plot <- renderPlot({
     source("HIV.R")
     if(input$radio3 == "Reported Deaths") {hiv_death_map(input$years3)}
-    else{hiv_case_map(input$years3)}
+    else{hiv_cases_map(input$years3)}
   })
   
   output$dropdown4 <- renderUI({
