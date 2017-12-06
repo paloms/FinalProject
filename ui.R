@@ -35,6 +35,15 @@ our.ui <- fluidPage(
                label="Select Data to Display:",
                choices=c("Reported Deaths", "Reported Cases")
                )
+             ),
+    tabPanel("TB Page",
+             plotOutput("TB_plot"),
+             uiOutput("dropdown4"),
+             radioButtons(
+               inputId="radio4",
+               label="Select Data to Display:",
+               choices=c("New Patient Success Rate", "Previously Treated Patient Success Rate")
+               )
              )
   )
   

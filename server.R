@@ -38,6 +38,17 @@ our.server <- function(input, output) {
     if(input$radio3 == "Reported Deaths") {hiv_death_map(input$years3)}
     else{hiv_case_map(input$years3)}
   })
+  
+  output$dropdown4 <- renderUI({
+    source("TB.R")
+    selectInput("years4", "Select Year:", list_years)
+  })
+  
+  output$TB_plot <- renderPlot({
+    source("TB.R")
+    if(input$radio4 == "New Patient Success Rate") {make_new_treatments_map(input$years4)}
+    else{make_previously_treated_map(input$years4)}
+  })
 }
 
 shinyServer(our.server)
