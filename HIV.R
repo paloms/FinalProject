@@ -8,7 +8,6 @@
 library(ggplot2)
 library(dplyr)
 
-setwd("~/Documents/UW/INFO_201/FinalProject")
 namechange <- read.csv("namechange.csv", header = T, stringsAsFactors = F)
 
 # Prepares reported death data
@@ -33,7 +32,7 @@ cases_hiv[is.na(cases_hiv)] <- 0
 cases_hiv <- left_join(x = map_data("world"), y = cases_hiv, by = c("region" = "country")) %>%
   arrange(year)
 
-# Plots world map of cases, takes in a year as input
+# Plots world map of deaths, takes in a year as input
 hiv_death_map <- function(input) {
   map_data <- filter(death_hiv, year == input)
   map <- ggplot(map_data, aes(x=long, y=lat, group=group, fill=map_data$number)) +
